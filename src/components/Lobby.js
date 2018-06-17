@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Sidebar from "./lobby/Sidebar";
 import GlobalChat from "./lobby/GlobalChat";
+import OnlineList from "./lobby/OnlineList";
+import LaunchPad from "./lobby/LaunchPad";
 
 export default class Lobby extends Component {
 
@@ -21,7 +22,8 @@ export default class Lobby extends Component {
     render() {
         return (
             <div className={this.state.show ? null : 'hide'}>
-                <Sidebar socket={this.state.socket}/>
+                <OnlineList socket={this.state.socket}/>
+                <LaunchPad socket={this.state.socket}/>
                 <GlobalChat socket={this.state.socket}/>
             </div>
         )
