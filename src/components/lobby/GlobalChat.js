@@ -15,7 +15,7 @@ export default class GlobalChat extends Component {
         this.state.socket.on('global_chat', msg => {
             let chat = this.state.chat;
             chat.push(<p>{msg}</p>);
-            this.setState({chat, input: ''});
+            this.setState({chat});
         });
 
     }
@@ -25,6 +25,10 @@ export default class GlobalChat extends Component {
         this.setState({input:event.target.value});
     }
 
+    sendChat() {
+        this.state.socket.emit('global_chat', this.state.input);
+        this.setState({input:''});
+    }
 
     render() {
         return (
@@ -35,7 +39,7 @@ export default class GlobalChat extends Component {
                 <input className="form-control global_input"
                        value={this.state.input} onChange={this.handleInputChange.bind(this)}/>
                 <button className="btn btn-primary global_send"
-                        onClick={() => this.state.socket.emit('global_chat', this.state.input)}>send</button>
+                        onClick={this.sendChat.bind(this)}>send</button>
             </div>
         )
     }

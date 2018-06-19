@@ -15,12 +15,11 @@ export default class AppLauncher extends Component {
             let list = this.state.list;
 
             switch (appJSON.type) {
-
                 case 'chat' :
                     list.push(<Chat appJSON={appJSON} index={list.length} socket={this.state.socket}/>);
                     break;
 
-
+                //new apps added here
 
             }
 

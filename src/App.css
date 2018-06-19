@@ -59,8 +59,8 @@ body {
     top: 2%;
     left: 2%;
     overflow-y: scroll;
-
 }
+
 .global_input {
     position: absolute;
     height: 9%;
@@ -88,10 +88,26 @@ body {
 
 .chat {
     position: fixed;
-    overflow-y: scroll;
     left: 2%;
     top: 51%;
     width: 30%;
     height: 47%;
+}
+
+.chat_body {
+    position: absolute;
+    height: 75%;
+    width: 96%;
+    top: 12%;
+    left: 2%;
+    overflow-y: scroll;
+}
+
+.title {
+    position: absolute;
+    height: 9%;
+    width: 96%;
+    top: 2%;
+    left: 2%;
 }
 
