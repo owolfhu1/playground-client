@@ -4,7 +4,7 @@ import './App.css';
 import Login from "./components/Login";
 import Popup from "./components/Popup";
 import Lobby from "./components/Lobby";
-import LaunchPad from "./components/lobby/LaunchPad";
+import LaunchPad from "./components/AppLauncher";
 
 
 
@@ -13,7 +13,7 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            socket : socketIOClient('http://localhost:4001'/*'https://react-playground-server.herokuapp.com/'*/),
+            socket : socketIOClient(/*'http://localhost:4001'*/'https://react-playground-server.herokuapp.com/'),
             username : '',
         };
 

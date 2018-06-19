@@ -78,7 +78,7 @@ body {
 }
 
 .online_list {
-    position: absolute;
+    position: fixed;
     overflow-y: scroll;
     top: 2%;
     left: 2%;
@@ -86,7 +86,7 @@ body {
     height: 47%;
 }
 
-.launch_pad {
+.chat {
     position: fixed;
     overflow-y: scroll;
     left: 2%;
@@ -94,3 +94,4 @@ body {
     width: 30%;
     height: 47%;
 }
+
