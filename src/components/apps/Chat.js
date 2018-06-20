@@ -83,7 +83,7 @@ export default class Chat extends Component {
 
     render() {
         return (
-            <Draggable>
+            <Draggable enableUserSelectHack={false} >
                 <div ref={div => {this.windowDiv = div;}} className="well chat" onClick={this.bringToTop.bind(this)}>
 
                     <Button className="close_window" bsStyle="danger" onClick=

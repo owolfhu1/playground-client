@@ -95,13 +95,11 @@ body {
     top: 2%;
     left: 2%;
     width: 30%;
-    height: 47%;
+    height: 96%;
 }
 
 .chat {
     position: fixed;
-    left: 2%;
-    top: 51%;
     width: 300px;
     height: 400px;
     border: #1dab28 solid 1px;
@@ -144,3 +142,15 @@ body {
     padding: 5px;
 }
 
+.shared_doc_window {
+    position: absolute;
+    border-radius: 8px;
+    border: rgba(39, 78, 255, 0.93) solid 1px;
+    padding: 3px;
+    background: cornflowerblue;
+}
+.shared_doc {
+    height: 200px;
+    border: rgba(29, 171, 40, 0) solid 1;
+
+}

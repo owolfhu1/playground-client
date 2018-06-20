@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Chat from "./apps/Chat";
+import SharedDoc from "./apps/SharedDoc";
 
 export default class AppLauncher extends Component {
 
@@ -16,6 +17,9 @@ export default class AppLauncher extends Component {
             switch (appJSON.type) {
                 case 'chat' :
                     list.push(<Chat appJSON={appJSON} index={list.length} socket={this.state.socket}/>);
+                    break;
+                case 'doc' :
+                    list.push(<SharedDoc appJSON={appJSON} index={list.length} socket={this.state.socket}/>);
                     break;
 
                 //new apps added here

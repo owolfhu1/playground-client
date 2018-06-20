@@ -22,11 +22,9 @@ export default class ChatMenu extends Component {
             <div onClick={this.dropDown.bind(this)} className="btn btn-primary chat_menu">
                 ^
                 <div className={this.state.show ? 'chat_menu_drop_down':'hide'}>
-                    <button className="btn btn-block btn-warning">Click a</button>
-                    <button className="btn btn-block btn-danger">button to</button>
-                    <button className="btn btn-block btn-primary">shart a new</button>
-                    <button className="btn btn-block btn-success">activity!!</button>
-                    <button className="btn btn-block">coming soon</button>
+                    <button onClick={() => this.state.socket.emit('make_doc', this.state.appId)}
+                            className="btn btn-block btn-sm btn-primary">Shared Doc</button>
+
                 </div>
             </div>
         );
