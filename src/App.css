@@ -37,11 +37,23 @@ body {
 
 .close_window {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 11px;
+    right: 9px;
     width: 25px;
     height: 25px;
     padding: 2px;
+}
+
+
+.chat_menu {
+
+    position: absolute;
+    top: 11px;
+    right: 39px;
+    width: 25px;
+    height: 25px;
+    padding: 5px 2px 2px;
+
 }
 
 .global {
@@ -109,16 +121,26 @@ body {
 .title {
     position: absolute;
     height: 9%;
-    width: 83%;
+    width: 74%;
     top: 6px;
     left: 2%;
     border: #1dab28 solid 1px;
     border-radius: 3px;
-    padding: 7px;
+    padding: 7px 7px 7px 8px;
     background: #c9c8fb;
 }
 
 .online_button {
     border-radius: 20px;
+}
+
+.chat_menu_drop_down {
+    position: absolute;
+    top : 20px;
+    right : 3px;
+    background: lightslategray;
+    border-radius: 4px;
+    width: 150px;
+    padding: 5px;
 }
 

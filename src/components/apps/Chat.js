@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Draggable from "react-draggable";
 import {Button} from "react-bootstrap";
+import ChatMenu from "./chat/ChatMenu";
 
 
 export default class Chat extends Component {
@@ -98,6 +99,7 @@ export default class Chat extends Component {
                     <Button className="btn-success global_send"
                         onClick={this.sendChat.bind(this)}>send</Button>
 
+                    <ChatMenu appId={this.state.id} socket={this.state.socket}/>
                 </div>
 
             </Draggable>
