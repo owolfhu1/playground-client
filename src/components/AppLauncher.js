@@ -13,7 +13,6 @@ export default class AppLauncher extends Component {
         //pushes component to list
         this.state.socket.on('launch', appJSON => {
             let list = this.state.list;
-
             switch (appJSON.type) {
                 case 'chat' :
                     list.push(<Chat appJSON={appJSON} index={list.length} socket={this.state.socket}/>);
@@ -22,9 +21,6 @@ export default class AppLauncher extends Component {
                 //new apps added here
 
             }
-
-
-
             this.setState({list});
         });
 
@@ -36,8 +32,6 @@ export default class AppLauncher extends Component {
         });
 
     }
-
-
 
     render() {
         return (

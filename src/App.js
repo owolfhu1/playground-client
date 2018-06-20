@@ -4,7 +4,7 @@ import './App.css';
 import Login from "./components/Login";
 import Popup from "./components/Popup";
 import Lobby from "./components/Lobby";
-import LaunchPad from "./components/AppLauncher";
+import AppLauncher from "./components/AppLauncher";
 
 
 
@@ -28,7 +28,7 @@ class App extends Component {
                 <Login socket={this.state.socket}/>
                 <Popup socket={this.state.socket}/>
                 <Lobby socket={this.state.socket}/>
-                <LaunchPad socket={this.state.socket}/>
+                <AppLauncher socket={this.state.socket}/>
             </div>
         );
     }

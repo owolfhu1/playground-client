@@ -1,0 +1,5 @@
+
+
+    + have server tell client when someone leaves a chat they are in
+    + make apps come to front when clicked
+    +

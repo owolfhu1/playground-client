@@ -35,24 +35,18 @@ export default class OnlineList extends Component {
         let list = [];
         for (let index in this.state.list) {
             let name = this.state.list[index];
-            list.push(
-                <li>
-                    <Button bsSize="xsmall" className="btn btn-success"
-                            onClick={() => this.state.socket.emit('chat_with', name)}>
-                        {name}
-                    </Button>
-                </li>
-            );
+            list.push(<Button className="btn btn-success btn-block online_button"
+                        onClick={() => this.state.socket.emit('chat_with', name)}>
+                    {name}</Button>);
         }
         return list;
     }
 
     render() {
         return (
-            <ul className="well online_list">
-                <h6>Online List</h6>
+            <div className="well online_list">
                 {this.drawList()}
-            </ul>
+            </div>
         )
     };
 

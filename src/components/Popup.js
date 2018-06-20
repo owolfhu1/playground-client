@@ -37,7 +37,7 @@ export default class Popup extends Component {
                         <Panel.Body>
                             {this.state.text}
                         </Panel.Body>
-                        <Button className="close" bsStyle="danger" onClick={this.hide}>x</Button>
+                        <Button className="close_window" bsStyle="danger" onClick={this.hide}>x</Button>
                     </Panel>
                 </div>
             </Draggable>
