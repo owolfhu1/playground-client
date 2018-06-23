@@ -25,6 +25,25 @@ export default class Chat extends Component {
             this.setState({text});
         });
 
+        //removes user from memberlist and displays a message when user leaves
+        this.state.socket.on(this.state.id + 'leave', username => {
+            let text = this.state.text;
+            text.push(<p>{username} has left the chat.</p>);
+            let appJSON = this.state.appJSON;
+            delete appJSON.members[appJSON.members.indexOf(username)];
+            this.setState({text,appJSON});
+        });
+
+        //add user to member list
+        this.state.socket.on(this.state.id + 'add', username => {
+            let text = this.state.text;
+            text.push(<p>{username} has joined the chat.</p>);
+            let appJSON = this.state.appJSON;
+            appJSON.members.push(username);
+            this.setState({text,appJSON});
+        });
+
+
     }
 
     handleInputChange(event) {
@@ -44,9 +63,9 @@ export default class Chat extends Component {
         let members = this.state.appJSON.members;
 
         for (let i in members) {
-            string += i*1 === members.length - 1 ? members[i] : `${members[i]}, `;
+            string += `${members[i]}, `;
         }
-        return string;
+        return string.substr(0,string.length -2);
     }
 
     handleKeyPress = (e) => {

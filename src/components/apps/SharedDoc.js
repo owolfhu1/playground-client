@@ -13,8 +13,17 @@ export default class SharedDoc extends Component {
             id : this.props.appJSON.id,
         };
 
-        this.state.socket.on(this.state.id, value => {
-            this.setState({value});
+        this.state.socket.on(this.state.id, data => {
+
+            //get the position
+            let positionStart = this.textarea.selectionStart;
+            positionStart = positionStart > data.position ? positionStart + 2 : positionStart + 1;
+
+            //put the new text in the textarea and callback sets selection position
+            this.setState({value:data.text}, () => {
+                this.textarea.setSelectionRange(positionStart,positionStart);
+            });
+
         });
 
     }
@@ -34,13 +43,13 @@ export default class SharedDoc extends Component {
         this.windowDiv.style.zIndex = highest;
     }
 
-
-
-
     handleChange(event) {
-        this.state.socket.emit('update_doc', {id : this.state.id, text: event.target.value});
+        this.state.socket.emit('update_doc', {
+            id : this.state.id,
+            text: event.target.value,
+            position : this.textarea.selectionStart
+        });
     }
-
 
     render() {
         return (
@@ -50,7 +59,7 @@ export default class SharedDoc extends Component {
                         {() => this.state.socket.emit('close_me', {index : this.state.index, id : this.state.id})}>x</Button>
 
 
-                    <textarea className="shared_doc" value={this.state.value}
+                    <textarea ref={textarea => {this.textarea = textarea;}} className="shared_doc" value={this.state.value}
                               onChange={this.handleChange.bind(this)}/>
 
 
