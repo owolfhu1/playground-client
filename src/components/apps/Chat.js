@@ -62,13 +62,14 @@ export default class Chat extends Component {
 
         let members = this.state.appJSON.members;
 
-        for (let i in members) {
-            string += `${members[i]}, `;
-        }
+        for (let i in members)
+            if (members[i])
+                string += `${members[i]}, `;
+
         return string.substr(0,string.length -2);
     }
 
-    handleKeyPress = (e) => {
+    handleKeyPress = e => {
         if (e.key === 'Enter') {
             this.sendChat();
         }

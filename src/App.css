@@ -149,10 +149,5 @@ body {
 .shared_doc {
     height: 300px;
     width: 200px;
-    border: rgba(29, 171, 40, 0) solid 1px;
-
-}
-
-.shared_doc:focus{
-    border: #5cac61 solid 1px;
+    border: rgb(8, 38, 8) solid 1px;
 }
