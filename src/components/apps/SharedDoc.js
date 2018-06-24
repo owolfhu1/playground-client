@@ -13,6 +13,7 @@ export default class SharedDoc extends Component {
             id : this.props.appJSON.id,
         };
 
+        //gets textarea text and curser position (curser position not working)
         this.state.socket.on(this.state.id, data => {
 
             //get the position
@@ -54,16 +55,20 @@ export default class SharedDoc extends Component {
     render() {
         return (
             <Draggable enableUserSelectHack={false} >
+
+                {/*main window*/}
                 <div ref={div => {this.windowDiv = div;}} onClick={this.bringToTop.bind(this)} className="shared_doc_window">
+
+                    {/*close window button*/}
                     <Button className="close_window" bsStyle="danger" onClick=
                         {() => this.state.socket.emit('close_me', {index : this.state.index, id : this.state.id})}>x</Button>
 
-
+                    {/*document*/}
                     <textarea ref={textarea => {this.textarea = textarea;}} className="shared_doc" value={this.state.value}
                               onChange={this.handleChange.bind(this)}/>
 
-
                 </div>
+
             </Draggable>
         )
     }

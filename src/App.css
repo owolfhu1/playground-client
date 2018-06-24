@@ -20,8 +20,8 @@ body {
   position: fixed;
   width: 181px;
   height: 200px;
-  left: 20%;
-  top: 20%;
+  left: 30%;
+  top: 30%;
   text-align: center;
 }
 
@@ -150,4 +150,26 @@ body {
     height: 300px;
     width: 200px;
     border: rgb(8, 38, 8) solid 1px;
+}
+
+.card-window {
+    background: white;
+    position: relative;
+    border: black solid 1px;
+}
+.card-top {
+    position: absolute;
+    top:0;
+    left:8%;
+}
+
+.card-bottom {
+    position: absolute;
+    bottom:0;
+    right:8%;
+}
+
+.suit-box {
+    position: absolute;
+    top:10%;
 }

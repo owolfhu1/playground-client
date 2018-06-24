@@ -6,8 +6,6 @@ import Popup from "./components/Popup";
 import Lobby from "./components/Lobby";
 import AppLauncher from "./components/AppLauncher";
 
-
-
 class App extends Component {
 
     constructor() {
@@ -18,9 +16,8 @@ class App extends Component {
                 //'https://react-playground-server.herokuapp.com/',
             ),
         };
-
-    }
-
+    };
+//suits: ♣ ♥ ♦ ♠
     render() {
         return (
             <div>
@@ -30,7 +27,7 @@ class App extends Component {
                 <AppLauncher socket={this.state.socket}/>
             </div>
         );
-    }
+    };
 }
 
 export default App;
