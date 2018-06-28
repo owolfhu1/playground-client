@@ -20,8 +20,8 @@ body {
   position: fixed;
   width: 181px;
   height: 200px;
-  left: 30%;
-  top: 30%;
+  left: 20%;
+  top: 20%;
   text-align: center;
 }
 
@@ -45,7 +45,7 @@ body {
 }
 
 
-.chat_menu {
+.app_menu {
 
     position: absolute;
     top: 11px;
@@ -132,13 +132,13 @@ body {
     border-radius: 20px;
 }
 
-.chat_menu_drop_down {
+.app_menu_drop_down {
     position: absolute;
     top : 20px;
     right : 3px;
     background: lightslategray;
     border-radius: 4px;
-    width: 150px;
+    width: 200px;
     padding: 5px;
 }
 
@@ -147,32 +147,13 @@ body {
 
 }
 .shared_doc {
-    height: 300px;
-    width: 200px;
-    border: rgb(8, 38, 8) solid 1px;
+    height: 400px;
+    width: 300px;
+    border: rgba(29, 171, 40, 0) solid 1px;
+    padding-top: 37px;
+
 }
 
-.card-window {
-    background: white;
-    position: absolute;
-    border: black solid 2px;
-}
-.card-window:hover {
-    box-shadow: rgba(0, 0, 0, 0.64) 10px 10px;
-}
-.card-top {
-    position: absolute;
-    top:0;
-    left:8%;
-}
-
-.card-bottom {
-    position: absolute;
-    bottom:0;
-    right:8%;
-}
-
-.suit-box {
-    position: absolute;
-    top:18%;
+.shared_doc:focus{
+    border: #5cac61 solid 1px;
 }

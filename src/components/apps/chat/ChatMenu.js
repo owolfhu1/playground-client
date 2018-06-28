@@ -13,9 +13,9 @@ export default class ChatMenu extends Component {
             show : false,
             inviteInput : ''
         };
+
     }
 
-    //show/hide drop down
     dropDown() {
         this.setState({show:!this.state.show}, () => {
             if (this.state.show)
@@ -23,7 +23,6 @@ export default class ChatMenu extends Component {
         });
     }
 
-    //handles typing in invite input
     handleInputChange(event) {
         this.setState({inviteInput:event.target.value});
     }
@@ -31,19 +30,19 @@ export default class ChatMenu extends Component {
 
     render() {
         return (
-            <div onClick={this.dropDown.bind(this)} className="btn btn-primary chat_menu">
+            <div onClick={this.dropDown.bind(this)} className="btn btn-primary app_menu">
                 ^
-                {/*drop down div*/}
-                <div className={this.state.show ? 'chat_menu_drop_down':'hide'}>
+                <div className={this.state.show ? 'app_menu_drop_down':'hide'}>
 
                     {/*invite input*/}
                     <input type="text" onChange={this.handleInputChange.bind(this)}
-                           value={this.state.inviteInput} className="form-control"
+                           value={this.state.saveInput} className="form-control"
                            ref={input => {this.inviteInput = input;}} />
 
                     {/*invite button*/}
                     <button onClick={() => this.state.socket.emit('chat_invite',
-                        {id:this.state.appId,name:this.state.inviteInput})}
+                        {id:this.state.appId,name:this.state.saveInput})}
+
                             className="btn btn-block btn-sm btn-success">invite</button>
                     <hr/>
 
@@ -51,8 +50,8 @@ export default class ChatMenu extends Component {
                     <button onClick={() => this.state.socket.emit('make_doc', this.state.appId)}
                             className="btn btn-block btn-sm btn-primary">Shared Doc</button>
 
-                </div>
 
+                </div>
             </div>
         );
     }
