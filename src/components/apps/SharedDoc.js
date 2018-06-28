@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from "react-bootstrap/es/Button";
 import Draggable from "react-draggable";
+import DocMenu from "./shareddoc/DocMenu";
 
 export default class SharedDoc extends Component {
 
@@ -49,16 +50,18 @@ export default class SharedDoc extends Component {
             text: event.target.value,
             position : this.textarea.selectionStart
         });
-    }
-
+    };
+    
     render() {
         return (
             <Draggable enableUserSelectHack={false} >
                 <div ref={div => {this.windowDiv = div;}} onClick={this.bringToTop.bind(this)} className="shared_doc_window">
+                    
+                    <DocMenu appId={this.state.id} socket={this.state.socket}/>
+                    
                     <Button className="close_window" bsStyle="danger" onClick=
                         {() => this.state.socket.emit('close_me', {index : this.state.index, id : this.state.id})}>x</Button>
-
-
+                    
                     <textarea ref={textarea => {this.textarea = textarea;}} className="shared_doc" value={this.state.value}
                               onChange={this.handleChange.bind(this)}/>
 

@@ -45,7 +45,7 @@ body {
 }
 
 
-.chat_menu {
+.app_menu {
 
     position: absolute;
     top: 11px;
@@ -132,13 +132,13 @@ body {
     border-radius: 20px;
 }
 
-.chat_menu_drop_down {
+.app_menu_drop_down {
     position: absolute;
     top : 20px;
     right : 3px;
     background: lightslategray;
     border-radius: 4px;
-    width: 150px;
+    width: 200px;
     padding: 5px;
 }
 
@@ -147,9 +147,10 @@ body {
 
 }
 .shared_doc {
-    height: 300px;
-    width: 200px;
+    height: 400px;
+    width: 300px;
     border: rgba(29, 171, 40, 0) solid 1px;
+    padding-top: 37px;
 
 }
 
