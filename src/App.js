@@ -5,6 +5,7 @@ import Login from "./components/Login";
 import Popup from "./components/Popup";
 import Lobby from "./components/Lobby";
 import AppLauncher from "./components/AppLauncher";
+import Card from "./components/game_peices/Card";
 
 class App extends Component {
 

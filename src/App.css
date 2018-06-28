@@ -154,8 +154,11 @@ body {
 
 .card-window {
     background: white;
-    position: relative;
-    border: black solid 1px;
+    position: absolute;
+    border: black solid 2px;
+}
+.card-window:hover {
+    box-shadow: rgba(0, 0, 0, 0.64) 10px 10px;
 }
 .card-top {
     position: absolute;
@@ -171,5 +174,5 @@ body {
 
 .suit-box {
     position: absolute;
-    top:10%;
+    top:18%;
 }
