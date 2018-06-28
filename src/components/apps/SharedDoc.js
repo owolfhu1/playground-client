@@ -14,6 +14,7 @@ export default class SharedDoc extends Component {
             id : this.props.appJSON.id,
         };
 
+        //gets text from server and puts it in the the textarea
         this.state.socket.on(this.state.id, data => {
 
             //get the position
@@ -26,6 +27,17 @@ export default class SharedDoc extends Component {
             });
 
         });
+        
+        this.state.socket.on(this.state.id + 'save', name => {
+           
+            
+            this.state.socket.emit('save_doc_to_db', {
+                text:this.state.value,
+                filename : name,
+            });
+            
+        });
+        
 
     }
 

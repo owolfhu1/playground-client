@@ -1,4 +1,5 @@
 
     + fix bug: cant open new shared doc when a user has closed a previous shared doc
     + fix bug: carrot always moves to end of text after typing in shared doc
-    + style doc drop down so load and delete buttons are next to eachother
+    + style doc drop down so load and delete buttons are next to each other
+    + validate save doc names in server
