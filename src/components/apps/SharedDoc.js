@@ -12,6 +12,7 @@ export default class SharedDoc extends Component {
             value : '',
             index : this.props.index,
             id : this.props.appJSON.id,
+            title : 'untitled',
         };
 
         //gets text from server and puts it in the the textarea
@@ -29,15 +30,14 @@ export default class SharedDoc extends Component {
         });
         
         this.state.socket.on(this.state.id + 'save', name => {
-           
-            
             this.state.socket.emit('save_doc_to_db', {
                 text:this.state.value,
                 filename : name,
+                id : this.state.id,
             });
-            
         });
-        
+
+        this.state.socket.on(this.state.id+'title', title => this.setState({title}));
 
     }
 
@@ -68,7 +68,9 @@ export default class SharedDoc extends Component {
         return (
             <Draggable enableUserSelectHack={false} >
                 <div ref={div => {this.windowDiv = div;}} onClick={this.bringToTop.bind(this)} className="shared_doc_window">
-                    
+
+                    <div className="title">{this.state.title}</div>
+
                     <DocMenu appId={this.state.id} socket={this.state.socket}/>
                     
                     <Button className="close_window" bsStyle="danger" onClick=
