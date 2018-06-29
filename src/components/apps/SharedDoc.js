@@ -12,7 +12,7 @@ export default class SharedDoc extends Component {
             value : '',
             index : this.props.index,
             id : this.props.appJSON.id,
-            title : 'untitled',
+            title : '',
         };
 
         //gets text from server and puts it in the the textarea
