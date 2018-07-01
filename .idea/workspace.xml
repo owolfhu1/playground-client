@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ad4bd975-dfb0-47c2-b306-dce9998a6573" name="Default" comment="Merge branch 'master' of https://github.com/owolfhu1/playground-client&#10;&#10;# Conflicts:&#10;#&#9;src/App.css&#10;#&#9;src/components/apps/SharedDoc.js&#10;#&#9;src/components/apps/chat/ChatMenu.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TODO.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/apps/ConnectFour.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/apps/ConnectFour.js" afterDir="false" />
     </list>
@@ -63,15 +64,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConnectFour.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConnectFour.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/apps/ConnectFour.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="500">
+              <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
                 <element signature="e#597#1047#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TODO.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TODO.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -115,7 +125,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/TODO.txt" />
         <option value="$PROJECT_DIR$/src/components/apps/SharedDoc.js" />
         <option value="$PROJECT_DIR$/src/components/Login.js" />
         <option value="$PROJECT_DIR$/src/components/apps/connect-four/ConnectFour.js" />
@@ -129,6 +138,7 @@
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/apps/ConnectFour.js" />
+        <option value="$PROJECT_DIR$/TODO.txt" />
       </list>
     </option>
   </component>
@@ -241,12 +251,12 @@
       <option name="presentableId" value="Default" />
       <updated>1530190285314</updated>
       <workItem from="1530190286587" duration="1319000" />
-      <workItem from="1530228042452" duration="26321000" />
+      <workItem from="1530228042452" duration="26634000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27640000" />
+    <option name="totallyTimeSpent" value="27953000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1926" y="0" width="1863" height="1047" extended-state="0" />
@@ -334,13 +344,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build/static/js/main.107c052f.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TODO.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/apps/shareddoc/DocMenu.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -459,12 +462,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/apps/ConnectFour.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="500">
+          <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
             <element signature="e#597#1047#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
         </state>
       </provider>
     </entry>
