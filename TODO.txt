@@ -4,3 +4,4 @@
     + style doc drop down so load and delete buttons are next to each other
     + validate save doc names in server
     + refactor refactor refactor
+    + connect 4 end message same for all players, should be different

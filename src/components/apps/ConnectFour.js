@@ -22,7 +22,7 @@ export default class ConnectFour extends Component {
 
         //closes at request of server
         this.state.socket.on(this.state.id + 'close', () =>
-            this.state.socket.emit('close_me', this.props.index));
+            this.state.socket.emit('close_me', {index:this.props.index, id: this.state.id}));
 
         //set the board at request of server
         this.state.socket.on(this.state.id, board => this.setState({board}));
