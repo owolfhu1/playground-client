@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Chat from "./apps/Chat";
 import SharedDoc from "./apps/SharedDoc";
+import ConnectFour from "./apps/ConnectFour";
 
 export default class AppLauncher extends Component {
 
@@ -21,7 +22,9 @@ export default class AppLauncher extends Component {
                 case 'doc' :
                     list.push(<SharedDoc appJSON={appJSON} index={list.length} socket={this.state.socket}/>);
                     break;
-
+                case 'con_4' :
+                    list.push(<ConnectFour appJSON={appJSON} index={list.length} socket={this.state.socket}/>);
+                    break;
                 //new apps added here
 
             }

@@ -50,6 +50,10 @@ export default class ChatMenu extends Component {
                     <button onClick={() => this.state.socket.emit('make_doc', this.state.appId)}
                             className="btn btn-block btn-sm btn-primary">Shared Doc</button>
 
+                    {/*start connect four button*/}
+                    <button onClick={() => this.state.socket.emit('start_connect_4', this.state.appId)}
+                            className="btn btn-block btn-sm btn-warning">Connect Four</button>
+
 
                 </div>
             </div>

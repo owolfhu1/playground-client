@@ -5,7 +5,6 @@ import Login from "./components/Login";
 import Popup from "./components/Popup";
 import Lobby from "./components/Lobby";
 import AppLauncher from "./components/AppLauncher";
-import Card from "./components/game_peices/Card";
 
 class App extends Component {
 
@@ -13,8 +12,8 @@ class App extends Component {
         super();
         this.state = {
             socket : socketIOClient(
-                //'http://localhost:4001',
-                'https://react-playground-server.herokuapp.com/',
+                'http://localhost:4001',
+                //'https://react-playground-server.herokuapp.com/',
             ),
         };
     };
