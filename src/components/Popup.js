@@ -44,14 +44,14 @@ export default class Popup extends Component {
 
     render() {
         return (
-            <Draggable>
+            <Draggable handle="strong">
                 <div ref={div => {this.windowDiv = div;}} onClick={this.bringToTop.bind(this)}
                      className={this.state.show ? 'popup_window' : 'hide'}>
                     <Panel>
                         <Panel.Heading>
-                            <Panel.Title>
+                            <strong><Panel.Title>
                                 {this.state.title}
-                            </Panel.Title>
+                            </Panel.Title></strong>
                         </Panel.Heading>
                         <Panel.Body>
                             {this.state.text}
