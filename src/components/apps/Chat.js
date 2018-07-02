@@ -25,7 +25,7 @@ export default class Chat extends Component {
             this.setState({text});
         });
 
-        //removes user from memberlist and displays a message when user leaves
+        //removes user from member list and displays a message when user leaves
         this.state.socket.on(this.state.id + 'leave', username => {
             let text = this.state.text;
             text.push(<p>{username} has left the chat.</p>);
@@ -43,6 +43,7 @@ export default class Chat extends Component {
             this.setState({text,appJSON});
         });
 
+        setTimeout(this.bringToTop.bind(this), 200);
 
     }
 
@@ -89,13 +90,10 @@ export default class Chat extends Component {
     bringToTop() {
         let elems = document.getElementsByTagName("*");
         let highest = 0;
-        for (let i = 0; i < elems.length; i++)
-        {
+        for (let i = 0; i < elems.length; i++) {
             let zindex = document.defaultView.getComputedStyle(elems[i],null).getPropertyValue("z-index");
             if ((zindex > highest) && (zindex != 'auto'))
-            {
                 highest = zindex*1;
-            }
         }
         highest++;
         this.windowDiv.style.zIndex = highest;

@@ -151,9 +151,22 @@ body {
     width: 300px;
     border: rgba(29, 171, 40, 0) solid 1px;
     padding: 44px 5px 5px;
-
 }
 
 .shared_doc:focus{
     border: #5cac61 solid 1px;
+}
+
+.connect_4_button {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.connect_4 {
+    border: black solid 1px;
+    border-radius: 15px;
+    background: rgb(161, 205, 166);
+    padding: 10px;
+    position:absolute;
 }

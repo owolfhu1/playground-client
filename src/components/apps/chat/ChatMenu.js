@@ -36,12 +36,12 @@ export default class ChatMenu extends Component {
 
                     {/*invite input*/}
                     <input type="text" onChange={this.handleInputChange.bind(this)}
-                           value={this.state.saveInput} className="form-control"
+                           value={this.state.inviteInput} className="form-control"
                            ref={input => {this.inviteInput = input;}} />
 
                     {/*invite button*/}
                     <button onClick={() => this.state.socket.emit('chat_invite',
-                        {id:this.state.appId,name:this.state.saveInput})}
+                        {id:this.state.appId,name:this.state.inviteInput})}
 
                             className="btn btn-block btn-sm btn-success">invite</button>
                     <hr/>
@@ -49,6 +49,10 @@ export default class ChatMenu extends Component {
                     {/*start shared document button*/}
                     <button onClick={() => this.state.socket.emit('make_doc', this.state.appId)}
                             className="btn btn-block btn-sm btn-primary">Shared Doc</button>
+
+                    {/*start connect four button*/}
+                    <button onClick={() => this.state.socket.emit('start_connect_4', this.state.appId)}
+                            className="btn btn-block btn-sm btn-warning">Connect Four</button>
 
 
                 </div>
