@@ -48,9 +48,11 @@ export default class ConnectFour extends Component {
 
     render() {
         return (
-            <Draggable>
+            <Draggable handle="strong">
                 <div ref={div => {this.windowDiv = div;}} onClick={this.bringToTop.bind(this)} className="connect_4">
 
+                    <strong><div className="title">Connect 4 - {this.state.id}</div></strong>
+                    
                     {/*shows input row when active and close button when un-active*/}
                     {this.state.active ? <ConnectFourInputRow socket={this.state.socket} id={this.state.id}/> :
                         <Button className="close_window" bsStyle="danger" onClick=

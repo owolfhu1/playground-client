@@ -65,10 +65,10 @@ export default class SharedDoc extends Component {
     
     render() {
         return (
-            <Draggable enableUserSelectHack={false} >
+            <Draggable handle="strong" nableUserSelectHack={false} >
                 <div ref={div => {this.windowDiv = div;}} onClick={this.bringToTop.bind(this)} className="shared_doc_window">
 
-                    <div className="title">{this.state.title}</div>
+                    <strong><div className="title">{this.state.title}</div></strong>
 
                     <DocMenu appId={this.state.id} socket={this.state.socket}/>
                     

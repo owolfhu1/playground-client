@@ -165,8 +165,9 @@ body {
 
 .connect_4 {
     border: black solid 1px;
-    border-radius: 15px;
-    background: rgb(161, 205, 166);
-    padding: 10px;
+    border-radius: 6px;
+    background: rgba(161, 205, 166, 0);
+
+    padding: 43px 10px 10px;
     position:absolute;
 }
