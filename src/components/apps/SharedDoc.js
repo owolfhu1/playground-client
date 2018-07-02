@@ -39,18 +39,17 @@ export default class SharedDoc extends Component {
 
         this.state.socket.on(this.state.id+'title', title => this.setState({title}));
 
+        setTimeout(this.bringToTop.bind(this), 200);
+
     }
 
     bringToTop() {
         let elems = document.getElementsByTagName("*");
         let highest = 0;
-        for (let i = 0; i < elems.length; i++)
-        {
+        for (let i = 0; i < elems.length; i++) {
             let zindex = document.defaultView.getComputedStyle(elems[i],null).getPropertyValue("z-index");
             if ((zindex > highest) && (zindex != 'auto'))
-            {
                 highest = zindex*1;
-            }
         }
         highest++;
         this.windowDiv.style.zIndex = highest;

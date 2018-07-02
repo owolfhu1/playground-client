@@ -22,12 +22,31 @@ export default class Popup extends Component {
     hide = () => this.setState({show: false});
 
     //show the popup with given data
-    show = data => this.setState({show: true, text: data.text, title: data.title});
+    show = data => {
+        this.setState({show: true, text: data.text, title: data.title});
+        this.bringToTop();
+    };
+
+
+    bringToTop() {
+        let elems = document.getElementsByTagName("*");
+        let highest = 0;
+        for (let i = 0; i < elems.length; i++) {
+            let zindex = document.defaultView.getComputedStyle(elems[i],null).getPropertyValue("z-index");
+            if ((zindex > highest) && (zindex != 'auto'))
+                highest = zindex*1;
+        }
+        highest++;
+        this.windowDiv.style.zIndex = highest;
+    }
+
+
 
     render() {
         return (
             <Draggable>
-                <div className={this.state.show ? 'popup_window' : 'hide'}>
+                <div ref={div => {this.windowDiv = div;}} onClick={this.bringToTop.bind(this)}
+                     className={this.state.show ? 'popup_window' : 'hide'}>
                     <Panel>
                         <Panel.Heading>
                             <Panel.Title>
