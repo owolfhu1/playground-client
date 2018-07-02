@@ -36,12 +36,12 @@ export default class ChatMenu extends Component {
 
                     {/*invite input*/}
                     <input type="text" onChange={this.handleInputChange.bind(this)}
-                           value={this.state.saveInput} className="form-control"
+                           value={this.state.inviteInput} className="form-control"
                            ref={input => {this.inviteInput = input;}} />
 
                     {/*invite button*/}
                     <button onClick={() => this.state.socket.emit('chat_invite',
-                        {id:this.state.appId,name:this.state.saveInput})}
+                        {id:this.state.appId,name:this.state.inviteInput})}
 
                             className="btn btn-block btn-sm btn-success">invite</button>
                     <hr/>
