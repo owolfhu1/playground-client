@@ -23,12 +23,10 @@ class App extends Component {
     render() {
         return (
             <div>
-    
                 <Login socket={this.state.socket}/>
                 <Popup socket={this.state.socket}/>
                 <Lobby socket={this.state.socket}/>
                 <AppLauncher socket={this.state.socket}/>
-            
             </div>
         );
     };
