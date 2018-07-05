@@ -5,8 +5,11 @@ import Login from "./components/Login";
 import Popup from "./components/Popup";
 import Lobby from "./components/Lobby";
 import AppLauncher from "./components/AppLauncher";
-class App extends Component {
 
+
+
+
+class App extends Component {
     constructor() {
         super();
         this.state = {
@@ -20,13 +23,22 @@ class App extends Component {
     render() {
         return (
             <div>
+    
                 <Login socket={this.state.socket}/>
                 <Popup socket={this.state.socket}/>
                 <Lobby socket={this.state.socket}/>
                 <AppLauncher socket={this.state.socket}/>
+            
             </div>
         );
     };
 }
 
 export default App;
+
+
+/*
+
+ 
+
+ */

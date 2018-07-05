@@ -104,9 +104,6 @@ export default class Chat extends Component {
             <Draggable handle="strong" enableUserSelectHack={false} >
                 <div ref={div => {this.windowDiv = div;}} className="well chat" onClick={this.bringToTop.bind(this)}>
 
-                    <Button className="close_window" bsStyle="danger" onClick=
-                        {() => this.state.socket.emit('close_me', {index : this.state.index, id : this.state.id})}>x</Button>
-
                     <strong><div className="title">Chat - {this.printNames()}</div></strong>
 
                     <div ref={div => {this.messageList = div;}} className="well chat_body">{this.state.text}</div>
@@ -118,6 +115,9 @@ export default class Chat extends Component {
                         onClick={this.sendChat.bind(this)}>send</Button>
 
                     <ChatMenu appId={this.state.id} socket={this.state.socket}/>
+                    
+                    <Button className="close_window" bsStyle="danger" onClick=
+                        {() => this.state.socket.emit('close_me', {index : this.state.index, id : this.state.id})}>x</Button>
                 </div>
 
             </Draggable>
