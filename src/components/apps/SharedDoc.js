@@ -8,7 +8,6 @@ export default class SharedDoc extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            socket : this.props.socket,
             value : '',
             index : this.props.index,
             id : this.props.appJSON.id,
@@ -16,7 +15,7 @@ export default class SharedDoc extends Component {
         };
 
         //gets text from server and puts it in the the textarea
-        this.state.socket.on(this.state.id, data => {
+        this.props.socket.on(this.state.id, data => {
 
             //get the position
             let positionStart = this.textarea.selectionStart;
@@ -29,15 +28,15 @@ export default class SharedDoc extends Component {
 
         });
         
-        this.state.socket.on(this.state.id + 'save', name => {
-            this.state.socket.emit('save_doc_to_db', {
+        this.props.socket.on(this.state.id + 'save', name => {
+            this.props.socket.emit('save_doc_to_db', {
                 text:this.state.value,
                 filename : name,
                 id : this.state.id,
             });
         });
 
-        this.state.socket.on(this.state.id+'title', title => this.setState({title}));
+        this.props.socket.on(this.state.id+'title', title => this.setState({title}));
 
         setTimeout(this.bringToTop.bind(this), 200);
 
@@ -56,7 +55,7 @@ export default class SharedDoc extends Component {
     }
 
     handleChange(event) {
-        this.state.socket.emit('update_doc', {
+        this.props.socket.emit('update_doc', {
             id : this.state.id,
             text: event.target.value,
             position : this.textarea.selectionStart
@@ -70,10 +69,10 @@ export default class SharedDoc extends Component {
 
                     <strong><div className="title">{this.state.title}</div></strong>
 
-                    <DocMenu appId={this.state.id} socket={this.state.socket}/>
+                    <DocMenu appId={this.state.id} socket={this.props.socket}/>
                     
                     <Button className="close_window" bsStyle="danger" onClick=
-                        {() => this.state.socket.emit('close_me', {index : this.state.index, id : this.state.id})}>x</Button>
+                        {() => this.props.socket.emit('close_me', {index : this.state.index, id : this.state.id})}>x</Button>
                     
                     <textarea ref={textarea => {this.textarea = textarea;}} className="shared_doc" value={this.state.value}
                               onChange={this.handleChange.bind(this)}/>

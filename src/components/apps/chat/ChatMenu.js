@@ -8,8 +8,6 @@ export default class ChatMenu extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            socket : this.props.socket,
-            appId : this.props.appId,
             show : false,
             inviteInput : ''
         };
@@ -40,18 +38,18 @@ export default class ChatMenu extends Component {
                            ref={input => {this.inviteInput = input;}} />
 
                     {/*invite button*/}
-                    <button onClick={() => this.state.socket.emit('chat_invite',
-                        {id:this.state.appId,name:this.state.inviteInput})}
+                    <button onClick={() => this.props.socket.emit('chat_invite',
+                        {id:this.props.appId,name:this.state.inviteInput})}
 
                             className="btn btn-block btn-sm btn-success">invite</button>
                     <hr/>
 
                     {/*start shared document button*/}
-                    <button onClick={() => this.state.socket.emit('make_doc', this.state.appId)}
+                    <button onClick={() => this.props.socket.emit('make_doc', this.props.appId)}
                             className="btn btn-block btn-sm btn-primary">Shared Doc</button>
 
                     {/*start connect four button*/}
-                    <button onClick={() => this.state.socket.emit('start_connect_4', this.state.appId)}
+                    <button onClick={() => this.props.socket.emit('start_connect_4', this.props.appId)}
                             className="btn btn-block btn-sm btn-warning">Connect Four</button>
 
 

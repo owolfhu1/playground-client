@@ -9,36 +9,33 @@ export default class Chat extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            socket: this.props.socket,
             id: this.props.appJSON.id,
-            index: this.props.index,
-            appJSON: this.props.appJSON,
             input: '',
             text: [],
     }
         ;
 
         //update chat with incoming messages
-        this.state.socket.on(this.state.id, msg => {
+        this.props.socket.on(this.props.appJSON.id, msg => {
             let text = this.state.text;
             text.push(<p>{msg}</p>);
             this.setState({text});
         });
 
         //removes user from member list and displays a message when user leaves
-        this.state.socket.on(this.state.id + 'leave', username => {
+        this.props.socket.on(this.props.appJSON.id + 'leave', username => {
             let text = this.state.text;
             text.push(<p>{username} has left the chat.</p>);
-            let appJSON = this.state.appJSON;
+            let appJSON = this.props.appJSON;
             delete appJSON.members[appJSON.members.indexOf(username)];
             this.setState({text,appJSON});
         });
 
         //add user to member list
-        this.state.socket.on(this.state.id + 'add', username => {
+        this.props.socket.on(this.props.appJSON.id + 'add', username => {
             let text = this.state.text;
             text.push(<p>{username} has joined the chat.</p>);
-            let appJSON = this.state.appJSON;
+            let appJSON = this.props.appJSON;
             appJSON.members.push(username);
             this.setState({text,appJSON});
         });
@@ -53,7 +50,7 @@ export default class Chat extends Component {
 
     sendChat() {
         if (this.state.input !== '') {
-            this.state.socket.emit('chat_room_msg', {input: this.state.input, id: this.state.id});
+            this.props.socket.emit('chat_room_msg', {input: this.state.input, id: this.props.appJSON.id});
             this.setState({input: ''});
         }
     }
@@ -61,7 +58,7 @@ export default class Chat extends Component {
     printNames() {
         let string = '';
 
-        let members = this.state.appJSON.members;
+        let members = this.props.appJSON.members;
 
         for (let i in members)
             if (members[i])
@@ -114,10 +111,10 @@ export default class Chat extends Component {
                     <Button className="btn-success global_send"
                         onClick={this.sendChat.bind(this)}>send</Button>
 
-                    <ChatMenu appId={this.state.id} socket={this.state.socket}/>
+                    <ChatMenu appId={this.props.appJSON.id} socket={this.props.socket}/>
                     
                     <Button className="close_window" bsStyle="danger" onClick=
-                        {() => this.state.socket.emit('close_me', {index : this.state.index, id : this.state.id})}>x</Button>
+                        {() => this.props.socket.emit('close_me', {index : this.props.index, id : this.props.appJSON.id})}>x</Button>
                 </div>
 
             </Draggable>

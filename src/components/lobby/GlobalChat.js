@@ -7,12 +7,12 @@ export default class GlobalChat extends Component {
         super(props);
 
         this.state = {
-            socket : this.props.socket,
+ 
             chat : [<p>WELCOME TO THE GLOBAL CHAT</p>],
             input : '',
         };
 
-        this.state.socket.on('global_chat', msg => {
+        this.props.socket.on('global_chat', msg => {
             let chat = this.state.chat;
             chat.push(<p>{msg}</p>);
             this.setState({chat});
@@ -27,7 +27,7 @@ export default class GlobalChat extends Component {
 
     sendChat() {
         if (this.state.input !== '') {
-            this.state.socket.emit('global_chat', this.state.input);
+            this.props.socket.emit('global_chat', this.state.input);
             this.setState({input: ''});
         }
     }

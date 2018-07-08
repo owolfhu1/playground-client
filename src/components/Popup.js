@@ -7,14 +7,13 @@ export default class Popup extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            socket: this.props.socket,
             text: '',
             title: '',
             show: false
         };
 
         //lets server activate popup
-        this.state.socket.on('popup', data => this.show(data));
+        this.props.socket.on('popup', data => this.show(data));
 
     }
 

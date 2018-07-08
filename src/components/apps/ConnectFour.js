@@ -5,12 +5,10 @@ import ConnectFourBoard from "./connect-four/ConnectFourBoard";
 import Button from "react-bootstrap/es/Button";
 
 export default class ConnectFour extends Component {
-        //<ConnectFour id={} board={} socket={this.state.socket}/>
+    
     constructor(props) {
         super(props);
         this.state = {
-            socket : this.props.socket,
-            id : this.props.appJSON.id,
             board : [
                 [0,0,0,0,0,0,0],
                 [0,0,0,0,0,0,0],
@@ -23,11 +21,10 @@ export default class ConnectFour extends Component {
         };
 
         //closes at request of server
-        this.state.socket.on(this.state.id + 'close', () => this.setState({active:false}));
-            //this.state.socket.emit('close_me', {index:this.props.index, id: this.state.id}));
+        this.props.socket.on(this.props.appJSON.id + 'close', () => this.setState({active:false}));
 
         //set the board at request of server
-        this.state.socket.on(this.state.id, board => this.setState({board}));
+        this.props.socket.on(this.props.appJSON.id, board => this.setState({board}));
 
         setTimeout(this.bringToTop.bind(this), 200);
 
@@ -51,12 +48,12 @@ export default class ConnectFour extends Component {
             <Draggable handle="strong">
                 <div ref={div => {this.windowDiv = div;}} onClick={this.bringToTop.bind(this)} className="connect_4">
 
-                    <strong><div className="title">Connect 4 - {this.state.id}</div></strong>
+                    <strong><div className="title">Connect 4 - {this.props.appJSON.id}</div></strong>
                     
                     {/*shows input row when active and close button when un-active*/}
-                    {this.state.active ? <ConnectFourInputRow socket={this.state.socket} id={this.state.id}/> :
+                    {this.state.active ? <ConnectFourInputRow socket={this.props.socket} id={this.props.appJSON.id}/> :
                         <Button className="close_window" bsStyle="danger" onClick=
-                            {() => this.state.socket.emit('close_me', {index : this.props.index, id : this.state.id})}>x</Button>}
+                            {() => this.props.socket.emit('close_me', {index : this.props.index, id : this.props.appJSON.id})}>x</Button>}
 
                     <ConnectFourBoard board={this.state.board}/>
 

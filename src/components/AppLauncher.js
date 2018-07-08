@@ -8,22 +8,21 @@ export default class AppLauncher extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            socket : this.props.socket,
             list : [],
         };
 
         //pushes component to list
-        this.state.socket.on('launch', appJSON => {
+        this.props.socket.on('launch', appJSON => {
             let list = this.state.list;
             switch (appJSON.type) {
                 case 'chat' :
-                    list.push(<Chat appJSON={appJSON} index={list.length} socket={this.state.socket}/>);
+                    list.push(<Chat appJSON={appJSON} index={list.length} socket={this.props.socket}/>);
                     break;
                 case 'doc' :
-                    list.push(<SharedDoc appJSON={appJSON} index={list.length} socket={this.state.socket}/>);
+                    list.push(<SharedDoc appJSON={appJSON} index={list.length} socket={this.props.socket}/>);
                     break;
                 case 'con_4' :
-                    list.push(<ConnectFour appJSON={appJSON} index={list.length} socket={this.state.socket}/>);
+                    list.push(<ConnectFour appJSON={appJSON} index={list.length} socket={this.props.socket}/>);
                     break;
                 //new apps added here
 
@@ -32,7 +31,7 @@ export default class AppLauncher extends Component {
         });
 
         //removes component from list
-        this.state.socket.on('close', index => {
+        this.props.socket.on('close', index => {
             let list = this.state.list;
             delete list[index];
             this.setState({list});

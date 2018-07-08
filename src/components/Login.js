@@ -22,7 +22,7 @@ export default class Login extends Component {
     submit() {
         let data = {
             username : this.state.username,
-            password : this.state.password,
+            password : this.state.password
         };
         this.props.socket.emit('login', data);
     }
