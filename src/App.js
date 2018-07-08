@@ -5,6 +5,7 @@ import Login from "./components/Login";
 import Popup from "./components/Popup";
 import Lobby from "./components/Lobby";
 import AppLauncher from "./components/AppLauncher";
+import TaskBar from "./components/TaskBar";
 
 
 
@@ -27,6 +28,7 @@ class App extends Component {
                 <Popup socket={this.state.socket}/>
                 <Lobby socket={this.state.socket}/>
                 <AppLauncher socket={this.state.socket}/>
+                <TaskBar socket={this.state.socket}/>
             </div>
         );
     };

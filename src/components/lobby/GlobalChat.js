@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Draggable from "react-draggable";
 
 export default class GlobalChat extends Component {
 
@@ -7,7 +7,6 @@ export default class GlobalChat extends Component {
         super(props);
 
         this.state = {
- 
             chat : [<p>WELCOME TO THE GLOBAL CHAT</p>],
             input : '',
         };
@@ -49,18 +48,33 @@ export default class GlobalChat extends Component {
     componentDidUpdate() {
         this.scrollToBottom();
     }
+    
+    bringToTop() {
+        let elems = document.getElementsByTagName("*");
+        let highest = 0;
+        for (let i = 0; i < elems.length; i++) {
+            let zindex = document.defaultView.getComputedStyle(elems[i],null).getPropertyValue("z-index");
+            if ((zindex > highest) && (zindex != 'auto'))
+                highest = zindex*1;
+        }
+        highest++;
+        this.windowDiv.style.zIndex = highest;
+    }
 
     render() {
         return (
-            <div className="well global">
-                <div ref={div => {this.messageList = div;}} className='well global_body'>
-                    {this.state.chat}
+            <Draggable handle="strong" enableUserSelectHack={false}>
+                <div onClick={this.bringToTop.bind(this)} ref={div => {this.windowDiv = div;}} className="well chat">
+                    <strong><div className="title">Global Chat</div></strong>
+                    <div ref={div => {this.messageList = div;}} className='well chat_body'>
+                        {this.state.chat}
+                    </div>
+                    <input className="form-control global_input" onKeyPress={this.handleKeyPress}
+                           value={this.state.input} onChange={this.handleInputChange.bind(this)}/>
+                    <button className="btn btn-primary global_send"
+                            onClick={this.sendChat.bind(this)}>send</button>
                 </div>
-                <input className="form-control global_input" onKeyPress={this.handleKeyPress}
-                       value={this.state.input} onChange={this.handleInputChange.bind(this)}/>
-                <button className="btn btn-primary global_send"
-                        onClick={this.sendChat.bind(this)}>send</button>
-            </div>
+            </Draggable>
         )
     }
 

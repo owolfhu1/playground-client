@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Chat from "./apps/Chat";
 import SharedDoc from "./apps/SharedDoc";
 import ConnectFour from "./apps/ConnectFour";
+import Button from "react-bootstrap/es/Button";
 
 export default class AppLauncher extends Component {
 
