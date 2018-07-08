@@ -14,7 +14,7 @@ export default class TaskBarButton extends Component {
     
     render() {
         return (
-            <Button bsStyle="info">
+            <Button onClick={() => this.props.socket.emit('task_click', this.props.index)} bsStyle="info">
                 {this.props.appJSON.type + " " + this.props.appJSON.id}
             </Button>
         )

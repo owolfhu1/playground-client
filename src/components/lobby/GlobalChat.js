@@ -9,6 +9,7 @@ export default class GlobalChat extends Component {
         this.state = {
             chat : [<p>WELCOME TO THE GLOBAL CHAT</p>],
             input : '',
+            show : true,
         };
 
         this.props.socket.on('global_chat', msg => {
@@ -16,7 +17,9 @@ export default class GlobalChat extends Component {
             chat.push(<p>{msg}</p>);
             this.setState({chat});
         });
-
+    
+        this.props.socket.on('task_global', () => this.taskClick());
+        
     }
 
 
@@ -60,11 +63,17 @@ export default class GlobalChat extends Component {
         highest++;
         this.windowDiv.style.zIndex = highest;
     }
-
+    
+    taskClick() {
+        this.bringToTop();
+        this.setState({show:!this.state.show});
+    }
+    
     render() {
         return (
             <Draggable handle="strong" enableUserSelectHack={false}>
-                <div onClick={this.bringToTop.bind(this)} ref={div => {this.windowDiv = div;}} className="well chat">
+                <div onClick={this.bringToTop.bind(this)} ref={div => {this.windowDiv = div;}}
+                     className={this.state.show ? "well chat" : 'hide'}>
                     <strong><div className="title">Global Chat</div></strong>
                     <div ref={div => {this.messageList = div;}} className='well chat_body'>
                         {this.state.chat}

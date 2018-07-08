@@ -12,8 +12,8 @@ export default class Chat extends Component {
             id: this.props.appJSON.id,
             input: '',
             text: [],
-    }
-        ;
+            show : true,
+        };
 
         //update chat with incoming messages
         this.props.socket.on(this.props.appJSON.id, msg => {
@@ -40,8 +40,15 @@ export default class Chat extends Component {
             this.setState({text,appJSON});
         });
 
+        this.props.socket.on('task_' + this.props.index, this.taskClick.bind(this));
+        
         setTimeout(this.bringToTop.bind(this), 200);
 
+    }
+    
+    taskClick() {
+        //this.bringToTop();
+        this.setState({show:!this.state.show});
     }
 
     handleInputChange(event) {
@@ -99,7 +106,7 @@ export default class Chat extends Component {
     render() {
         return (
             <Draggable handle="strong" enableUserSelectHack={false} >
-                <div ref={div => {this.windowDiv = div;}} className="well chat" onClick={this.bringToTop.bind(this)}>
+                <div ref={div => {this.windowDiv = div;}} className={this.state.show ? "well chat" : 'hide'} onClick={this.bringToTop.bind(this)}>
 
                     <strong><div className="title">Chat - {this.printNames()}</div></strong>
 

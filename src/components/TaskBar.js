@@ -17,7 +17,7 @@ export default class TaskBar extends Component {
         //pushes component to list
         this.props.socket.on('launch', appJSON => {
             let list = this.state.list;
-            list.push(<TaskBarButton appJSON={appJSON} socket={this.props.socket}/>);
+            list.push(<TaskBarButton index={list.length} appJSON={appJSON} socket={this.props.socket}/>);
             this.setState({list});
         });
         
@@ -27,10 +27,8 @@ export default class TaskBar extends Component {
             delete list[index];
             this.setState({list});
         });
-    
-        this.props.socket.on('lobby_show', username => this.setState({username, show: true}));
+        this.props.socket.on('lobby_show', () => this.setState({show: true}));
         this.props.socket.on('lobby_hide', () => this.setState({show: false}));
-        
     }
     
     render() {
@@ -38,8 +36,8 @@ export default class TaskBar extends Component {
             <div className="task_bar">
                 <Button bsStyle="success">Menu</Button> |&nbsp;
                 <span className={this.state.show ? null : 'hide'}>
-                    <Button bsStyle="primary">Online</Button>
-                    <Button bsStyle="primary">Global</Button> |&nbsp;
+                    <Button onClick={() => this.props.socket.emit('task_click', 'online')} bsStyle="primary">Online</Button>&nbsp;
+                    <Button onClick={() => this.props.socket.emit('task_click', 'global')} bsStyle="primary">Global</Button> |&nbsp;
                 </span>
                 <span>{this.state.list}</span>
             </div>

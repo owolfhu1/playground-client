@@ -9,6 +9,7 @@ export default class OnlineList extends Component {
         super(props);
         this.state = {
             list : [],
+            show : true,
         };
 
         //updates list when user logs in
@@ -27,6 +28,8 @@ export default class OnlineList extends Component {
 
         //gets initial list when client logs in
         this.props.socket.on('set_login_list', list => this.setState({list}));
+        
+        this.props.socket.on('task_online', () => this.taskClick());
 
     }
 
@@ -54,10 +57,17 @@ export default class OnlineList extends Component {
         this.windowDiv.style.zIndex = highest;
     }
     
+    taskClick() {
+        this.bringToTop();
+        this.setState({show:!this.state.show});
+    }
+    
+    
     render() {
         return (
             <Draggable handle="strong">
-                <div onClick={this.bringToTop.bind(this)} ref={div => {this.windowDiv = div;}} className="well online_list">
+                <div onClick={this.bringToTop.bind(this)} ref={div => {this.windowDiv = div;}}
+                     className={this.state.show ? "well online_list": 'hide'}>
                     <strong><div className="title">Online List</div></strong>
                     <span>{this.drawList()}</span>
                 </div>

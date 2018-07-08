@@ -9,11 +9,8 @@ export default class Lobby extends Component {
         this.state = {
             show : false
         };
-
-        //show/hide the lobby from server
-        this.props.socket.on('lobby_show', username => this.setState({username, show: true}));
+        this.props.socket.on('lobby_show', () => this.setState({show: true}));
         this.props.socket.on('lobby_hide', () => this.setState({show: false}));
-
     }
 
     render() {

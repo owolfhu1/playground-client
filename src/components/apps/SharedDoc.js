@@ -12,6 +12,7 @@ export default class SharedDoc extends Component {
             index : this.props.index,
             id : this.props.appJSON.id,
             title : '',
+            show : true,
         };
 
         //gets text from server and puts it in the the textarea
@@ -29,7 +30,9 @@ export default class SharedDoc extends Component {
         });
 
         this.props.socket.on(this.state.id+'title', title => this.setState({title}));
-
+    
+        this.props.socket.on('task_' + this.props.index, this.taskClick.bind(this));
+        
         setTimeout(this.bringToTop.bind(this), 200);
 
     }
@@ -54,7 +57,12 @@ export default class SharedDoc extends Component {
         highest++;
         this.windowDiv.style.zIndex = highest;
     }
-
+    
+    taskClick() {
+        this.bringToTop();
+        this.setState({show:!this.state.show});
+    }
+    
     handleChange(event) {
         this.props.socket.emit('update_doc', {
             id : this.state.id,
@@ -66,7 +74,8 @@ export default class SharedDoc extends Component {
     render() {
         return (
             <Draggable handle="strong" nableUserSelectHack={false} >
-                <div ref={div => {this.windowDiv = div;}} onClick={this.bringToTop.bind(this)} className="shared_doc_window">
+                <div ref={div => {this.windowDiv = div;}} onClick={this.bringToTop.bind(this)}
+                     className={this.state.show ? "shared_doc_window" : 'hide'}>
 
                     <strong><div className="title">{this.state.title}</div></strong>
 

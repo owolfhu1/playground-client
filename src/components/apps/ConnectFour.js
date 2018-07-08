@@ -18,6 +18,7 @@ export default class ConnectFour extends Component {
                 [0,0,0,0,0,0,0],
             ],
             active : true,
+            show : true,
         };
 
         //closes at request of server
@@ -25,12 +26,18 @@ export default class ConnectFour extends Component {
 
         //set the board at request of server
         this.props.socket.on(this.props.appJSON.id, board => this.setState({board}));
-
+    
+        this.props.socket.on('task_' + this.props.index, this.taskClick.bind(this));
+        
         setTimeout(this.bringToTop.bind(this), 200);
 
     }
-
-
+    
+    taskClick() {
+        this.bringToTop();
+        this.setState({show:!this.state.show});
+    }
+    
     bringToTop() {
         let elems = document.getElementsByTagName("*");
         let highest = 0;
@@ -46,7 +53,7 @@ export default class ConnectFour extends Component {
     render() {
         return (
             <Draggable handle="strong">
-                <div ref={div => {this.windowDiv = div;}} onClick={this.bringToTop.bind(this)} className="connect_4">
+                <div ref={div => {this.windowDiv = div;}} onClick={this.bringToTop.bind(this)} className={this.state.show ? "connect_4" : 'hide'}>
 
                     <strong><div className="title">Connect 4 - {this.props.appJSON.id}</div></strong>
                     
