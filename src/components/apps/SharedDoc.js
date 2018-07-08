@@ -27,20 +27,21 @@ export default class SharedDoc extends Component {
             });
 
         });
-        
-        this.props.socket.on(this.state.id + 'save', name => {
-            this.props.socket.emit('save_doc_to_db', {
-                text:this.state.value,
-                filename : name,
-                id : this.state.id,
-            });
-        });
 
         this.props.socket.on(this.state.id+'title', title => this.setState({title}));
 
         setTimeout(this.bringToTop.bind(this), 200);
 
     }
+    
+    save(name) {
+        this.props.socket.emit('save_doc', {
+            text:this.state.value,
+            filename : name,
+            id : this.state.id,
+        });
+    }
+    
 
     bringToTop() {
         let elems = document.getElementsByTagName("*");
@@ -69,7 +70,7 @@ export default class SharedDoc extends Component {
 
                     <strong><div className="title">{this.state.title}</div></strong>
 
-                    <DocMenu appId={this.state.id} socket={this.props.socket}/>
+                    <DocMenu save={this.save.bind(this)} appId={this.state.id} socket={this.props.socket}/>
                     
                     <Button className="close_window" bsStyle="danger" onClick=
                         {() => this.props.socket.emit('close_me', {index : this.state.index, id : this.state.id})}>x</Button>

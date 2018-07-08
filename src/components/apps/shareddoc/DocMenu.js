@@ -68,18 +68,14 @@ export default class DocMenu extends Component {
                 ^
                 <div className={this.state.show ? 'app_menu_drop_down':'hide'}>
                     
-                    {/*doc name input*/}
                     <input type="text" onChange={this.handleInputChange.bind(this)}
                            value={this.state.saveInput} className="form-control"
                            ref={input => {this.saveInput = input;}} />
                     
-                    {/*save button*/}
-                    <button onClick={() => this.props.socket.emit('save_doc',
-                        {id:this.state.appId,name:this.state.saveInput})}
+                    <button onClick={() => this.props.save(this.state.saveInput)}
                             className="btn btn-block btn-sm btn-success">save</button>
                     <hr/>
                     
-                    {/*load saved doc buttons*/}
                     {this.savedButtons()}
                 
                 </div>
