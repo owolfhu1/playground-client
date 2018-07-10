@@ -51,11 +51,15 @@ export default class SpecialGame extends Component {
         highest++;
         this.windowDiv.style.zIndex = highest;
     }
-    
+
+    close() {
+        this.state.gameSocket.disconnect();
+        this.props.socket.emit('close_me', {index : this.props.index, id : this.props.appJSON.id});
+    }
     
     render() {
         return (
-            <Draggable>
+            <Draggable handle="strong">
                 <div ref={div => {this.windowDiv = div;}} className={this.state.show ? null : 'hide'}
                      onClick={this.bringToTop.bind(this)} style={{
                     width: '400px',
@@ -64,6 +68,8 @@ export default class SpecialGame extends Component {
                     background: 'gray',
                     padding: '20px'
                 }}>
+
+                    <strong><div className="title">Special Test Game</div></strong>
                     
                     <h1>Hello {this.state.name}!</h1>
                     <button onClick={() => this.state.gameSocket.emit('click', this.state.name)}>
@@ -71,8 +77,7 @@ export default class SpecialGame extends Component {
                     <p>{this.state.serverMsg}</p>
     
     
-                    <Button className="close_window" bsStyle="danger" onClick=
-                        {() => this.props.socket.emit('close_me', {index : this.props.index, id : this.props.appJSON.id})}>x</Button>
+                    <Button className="close_window" bsStyle="danger" onClick={this.close.bind(this)}>x</Button>
                     
                 </div>
             </Draggable>

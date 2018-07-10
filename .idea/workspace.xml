@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad4bd975-dfb0-47c2-b306-dce9998a6573" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/apps/chat/ChatMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/apps/chat/ChatMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/apps/special_game/SpecialGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/apps/special_game/SpecialGame.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -40,8 +40,8 @@
       <file leaf-file-name="Chat.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/apps/Chat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="48" selection-start-line="48" selection-end-line="51" selection-end-column="5" />
+            <state relative-caret-position="180">
+              <caret line="110" column="92" lean-forward="true" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="92" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -61,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpecialGame.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SpecialGame.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/apps/special_game/SpecialGame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="51" column="46" lean-forward="true" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+            <state relative-caret-position="422">
+              <caret line="79" column="78" selection-start-line="79" selection-start-column="78" selection-end-line="79" selection-end-column="78" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -73,10 +73,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChatMenu.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChatMenu.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/apps/chat/ChatMenu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
+            <state relative-caret-position="1100">
               <caret line="55" column="99" selection-start-line="55" selection-start-column="99" selection-end-line="55" selection-end-column="99" />
             </state>
           </provider>
@@ -146,8 +146,8 @@
         <option value="$PROJECT_DIR$/src/components/AppLauncher.js" />
         <option value="$PROJECT_DIR$/src/components/apps/Chat.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/components/apps/special_game/SpecialGame.js" />
         <option value="$PROJECT_DIR$/src/components/apps/chat/ChatMenu.js" />
+        <option value="$PROJECT_DIR$/src/components/apps/special_game/SpecialGame.js" />
       </list>
     </option>
   </component>
@@ -167,11 +167,11 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-1859" />
-    <option name="y" value="-120" />
-    <option name="width" value="1271" />
-    <option name="height" value="825" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1843" />
+    <option name="y" value="-65" />
+    <option name="width" value="855" />
+    <option name="height" value="809" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -265,7 +265,7 @@
       <workItem from="1530573762759" duration="7010000" />
       <workItem from="1530733378962" duration="7000" />
       <workItem from="1530733399242" duration="2276000" />
-      <workItem from="1531225591377" duration="1114000" />
+      <workItem from="1531225591377" duration="1897000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/owolfhu1/playground-client&#10;&#10;# Conflicts:&#10;#&#9;src/App.css&#10;#&#9;src/components/apps/SharedDoc.js&#10;#&#9;src/components/apps/chat/ChatMenu.js">
       <created>1530752665810</created>
@@ -299,7 +299,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82676000" />
+    <option name="totallyTimeSpent" value="83459000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -311,10 +311,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1859" y="-120" width="1271" height="825" extended-state="0" />
-    <editor active="true" />
+    <frame x="-1928" y="-210" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14193025" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09220232" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3291714" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -322,7 +321,7 @@
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.25083613" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24924318" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27365357" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.20479302" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -558,6 +557,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="59" selection-start-line="59" selection-end-line="62" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#41#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -620,30 +622,10 @@
     <entry file="file://$PROJECT_DIR$/src/App.test.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/apps/Chat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="48" selection-start-line="48" selection-end-line="51" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/apps/special_game/SpecialGame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="51" column="46" lean-forward="true" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -659,8 +641,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/apps/chat/ChatMenu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
+        <state relative-caret-position="1100">
           <caret line="55" column="99" selection-start-line="55" selection-start-column="99" selection-end-line="55" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/apps/Chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="110" column="92" lean-forward="true" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="92" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/apps/special_game/SpecialGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="79" column="78" selection-start-line="79" selection-start-column="78" selection-end-line="79" selection-end-column="78" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
