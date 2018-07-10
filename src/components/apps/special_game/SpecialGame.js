@@ -70,13 +70,17 @@ export default class SpecialGame extends Component {
                 }}>
 
                     <strong><div className="title">Special Test Game</div></strong>
-                    
+
+
+                    {/* example */}
                     <h1>Hello {this.state.name}!</h1>
                     <button onClick={() => this.state.gameSocket.emit('click', this.state.name)}>
                         click me</button>
                     <p>{this.state.serverMsg}</p>
-    
-    
+                    {/* example */}
+
+
+
                     <Button className="close_window" bsStyle="danger" onClick={this.close.bind(this)}>x</Button>
                     
                 </div>

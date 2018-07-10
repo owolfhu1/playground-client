@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad4bd975-dfb0-47c2-b306-dce9998a6573" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/apps/special_game/SpecialGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/apps/special_game/SpecialGame.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -64,8 +65,8 @@
       <file leaf-file-name="SpecialGame.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/apps/special_game/SpecialGame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="79" column="78" selection-start-line="79" selection-start-column="78" selection-end-line="79" selection-end-column="78" />
+            <state relative-caret-position="362">
+              <caret line="73" selection-start-line="73" selection-end-line="73" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -167,7 +168,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-1843" />
     <option name="y" value="-65" />
     <option name="width" value="855" />
@@ -265,7 +266,7 @@
       <workItem from="1530573762759" duration="7010000" />
       <workItem from="1530733378962" duration="7000" />
       <workItem from="1530733399242" duration="2276000" />
-      <workItem from="1531225591377" duration="1897000" />
+      <workItem from="1531225591377" duration="3454000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/owolfhu1/playground-client&#10;&#10;# Conflicts:&#10;#&#9;src/App.css&#10;#&#9;src/components/apps/SharedDoc.js&#10;#&#9;src/components/apps/chat/ChatMenu.js">
       <created>1530752665810</created>
@@ -299,7 +300,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83459000" />
+    <option name="totallyTimeSpent" value="85016000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -311,7 +312,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-210" width="1936" height="1056" extended-state="6" />
+    <frame x="-1928" y="-210" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09220232" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3291714" />
@@ -658,8 +659,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/apps/special_game/SpecialGame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="79" column="78" selection-start-line="79" selection-start-column="78" selection-end-line="79" selection-end-column="78" />
+        <state relative-caret-position="362">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
