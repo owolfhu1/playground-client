@@ -47,7 +47,7 @@ export default class Chat extends Component {
     }
     
     taskClick() {
-        //this.bringToTop();
+        this.bringToTop();
         this.setState({show:!this.state.show});
     }
 
