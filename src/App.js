@@ -15,8 +15,8 @@ class App extends Component {
         super();
         this.state = {
             socket : socketIOClient(
-                //'http://localhost:4001',
-                'https://react-playground-server.herokuapp.com/',
+                'http://localhost:4001',
+                //'https://react-playground-server.herokuapp.com/',
             ),
         };
     };

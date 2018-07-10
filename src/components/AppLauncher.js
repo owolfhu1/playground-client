@@ -3,6 +3,7 @@ import Chat from "./apps/Chat";
 import SharedDoc from "./apps/SharedDoc";
 import ConnectFour from "./apps/ConnectFour";
 import Button from "react-bootstrap/es/Button";
+import SpecialGame from "./apps/special_game/SpecialGame";
 
 export default class AppLauncher extends Component {
 
@@ -25,6 +26,10 @@ export default class AppLauncher extends Component {
                 case 'con_4' :
                     list.push(<ConnectFour appJSON={appJSON} index={list.length} socket={this.props.socket}/>);
                     break;
+                case 'spec' :
+                    list.push(<SpecialGame appJSON={appJSON} index={list.length} socket={this.props.socket}/>);
+                    break;
+                    
                 //new apps added here
 
             }
