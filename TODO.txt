@@ -2,3 +2,4 @@
     + fix bug: carrot always moves to end of text after typing in shared doc
     + style doc drop down so load and delete buttons are next to each
     + refactor refactor refactor
+    + refactor task clicks to use socket.emit('self',emitData);

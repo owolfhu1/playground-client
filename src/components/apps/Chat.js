@@ -17,6 +17,10 @@ export default class Chat extends Component {
 
         //update chat with incoming messages
         this.props.socket.on(this.props.appJSON.id, msg => {
+            if(!this.state.show)
+                this.props.socket.emit('self',{
+                    type:'flash'+this.props.index
+                });
             let text = this.state.text;
             text.push(<p>{msg}</p>);
             this.setState({text});
