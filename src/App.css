@@ -196,11 +196,14 @@ body {
 
 
 .flash {
+    position: relative;
     animation: flashing 750ms infinite;
+    z-index: 1000;
 }
 
 @keyframes flashing {
 
-    50% { color: #B20000; box-shadow: 0 0 40px #FF0000; }
+    50% { color: #B20000; box-shadow: 0 0 40px #FF0000;}
+
 
 }
