@@ -36,8 +36,8 @@ export default class TaskBar extends Component {
             <div className="task_bar">
                 <Button bsStyle="success">Menu</Button> |&nbsp;
                 <span className={this.state.show ? null : 'hide'}>
-                    <Button onClick={() => this.props.socket.emit('task_click', 'online')} bsStyle="primary">Online</Button>&nbsp;
-                    <Button onClick={() => this.props.socket.emit('task_click', 'global')} bsStyle="primary">Global</Button> |&nbsp;
+                    <Button onClick={() => this.props.socket.emit('self', {type:'task_online'})} bsStyle="primary">Online</Button>&nbsp;
+                    <Button onClick={() => this.props.socket.emit('self', {type:'task_global'})} bsStyle="primary">Global</Button> |&nbsp;
                 </span>
                 <span>{this.state.list}</span>
             </div>
