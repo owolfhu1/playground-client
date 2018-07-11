@@ -17,15 +17,8 @@ export default class SharedDoc extends Component {
 
         //gets text from server and puts it in the the textarea
         this.props.socket.on(this.state.id, data => {
-
-            //get the position
-            let positionStart = this.textarea.selectionStart;
-            positionStart = positionStart > data.position ? positionStart + 2 : positionStart + 1;
-
-            //put the new text in the textarea and callback sets selection position
-            this.setState({value:data.text}, () => {
-                this.textarea.setSelectionRange(positionStart,positionStart);
-            });
+            
+            this.setState({value:data.text});
 
         });
 
@@ -45,7 +38,6 @@ export default class SharedDoc extends Component {
         });
     }
     
-
     bringToTop() {
         let elems = document.getElementsByTagName("*");
         let highest = 0;

@@ -16,7 +16,7 @@ export default class TaskBarButton extends Component {
     }
     
     click() {
-        this.props.socket.emit('task_click', this.props.index);
+        this.props.socket.emit('self', {type:'task_'+this.props.index});
         if (this.state.flash)
             this.setState({flash:false});
     }

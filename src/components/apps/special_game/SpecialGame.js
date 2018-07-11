@@ -9,8 +9,8 @@ export default class SpecialGame extends Component {
         super(props);
         this.state = {
             gameSocket : socketIOClient(
-                'http://localhost:4002',
-                //'https://.herokuapp.com/',
+                //'http://localhost:4002',
+                'https://special-game-server.herokuapp.com/',
             ),
             serverMsg : '',
             name : '',
