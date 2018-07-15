@@ -17,6 +17,11 @@ export default class SharedDoc extends Component {
 
         //gets text from server and puts it in the the textarea
         this.props.socket.on(this.state.id, data => {
+    
+            if(!this.state.show)
+                this.props.socket.emit('self',{
+                    type:'flash'+this.props.index
+                });
             
             this.setState({value:data.text});
 

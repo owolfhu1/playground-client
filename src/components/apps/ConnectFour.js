@@ -25,7 +25,13 @@ export default class ConnectFour extends Component {
         this.props.socket.on(this.props.appJSON.id + 'close', () => this.setState({active:false}));
 
         //set the board at request of server
-        this.props.socket.on(this.props.appJSON.id, board => this.setState({board}));
+        this.props.socket.on(this.props.appJSON.id, board => {
+            if(!this.state.show)
+                this.props.socket.emit('self',{
+                    type:'flash'+this.props.index
+                });
+            this.setState({board});
+        });
     
         this.props.socket.on('task_' + this.props.index, this.taskClick.bind(this));
         
