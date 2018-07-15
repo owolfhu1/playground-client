@@ -89,7 +89,7 @@ export default class SpecialGame extends Component {
                             onClick={() => this.state.gameSocket.emit('ready')}>
                         I'm Ready!</button>
                     
-                    {/*<Button className="close_window" bsStyle="danger" onClick={this.close.bind(this)}>x</Button>*/}
+                    <Button className="close_window" bsStyle="danger" onClick={this.close.bind(this)}>x</Button>
                     
                     <SpecialBoard gameSocket={this.state.gameSocket} gameId={this.props.appJSON.id}/>
                     
