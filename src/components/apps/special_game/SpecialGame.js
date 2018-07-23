@@ -30,7 +30,7 @@ export default class SpecialGame extends Component {
                 this.setState({playing:true});
             let scores = [];
             for (let i in board.players)
-                scores.push(<span>{i}: {board.players[i].points}</span>)
+                scores.push(<span>&nbsp;&nbsp;{i}: {board.players[i].points}&nbsp;</span>)
             this.setState({serverMsg : scores});
         });
         
@@ -42,14 +42,11 @@ export default class SpecialGame extends Component {
         setTimeout(this.bringToTop.bind(this), 200);
     }
     
-    
     taskClick() {
         this.bringToTop();
         this.setState({show:!this.state.show});
     }
     
-    
-    //todo: why doesn't this work???
     bringToTop() {
         let elems = document.getElementsByTagName("*");
         let highest = 0;
@@ -72,11 +69,13 @@ export default class SpecialGame extends Component {
             <Draggable handle="strong">
                 <div ref={div => {this.windowDiv = div;}} className={this.state.show ? null : 'hide'}
                      onClick={this.bringToTop.bind(this)} style={{
-                    width: '400px',
-                    height: '600px',
+                    position : 'absolute',
+                    width: '290px',
                     border: 'black solid 1px',
                     background: 'gray',
-                    padding: '50px'
+                    padding: '5px',
+                    paddingTop: '50px',
+                    borderRadius: '5px'
                 }}>
 
                     <strong><div className="title">Special Test Game</div></strong>

@@ -51,7 +51,7 @@ export default class SpecialBoard extends Component {
                 borderRadius : '4px',
                 margin: '2px',
                 padding: 'auto',
-                background : this.props.color,
+                background : 'teal',
                 
             }}>
                 {this.state.board}
